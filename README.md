@@ -7,7 +7,7 @@ La solución esta desarrollada en .Net Core, y funciona como aplicación de cons
 ## Características
 - Es un servicio Rest, que antiende a un puerto a especificar en el código fuente.
 - Código completamente documentado.
-- Utiliza las librerias de Autofac y log4net.
+- Utiliza las librerias de Autofac, NewtonJson y log4net.
 - Fácil de incorporar otras empresas de prepago.
 
 ## Puesta en marcha
@@ -47,6 +47,32 @@ La versión mínima requerida de Tango Restô para habiltar esta funcionalidad e
             builder.RegisterType<Amipass_Imp>().As<IAmipass>();
             builder.RegisterType<Pipol_Imp>().As<IPipol>();
             builder.RegisterType<[MedioPagoNuevo]_Imp>().As<I[MedioPagoNuevo]>();
+```
+
+## Parámetros de entrada al método Pagar.
+Tango Restô, al invocar al servicio de apertura envia una lista valores en formato clave - valor.
+Por ahor el sistema envia 3 claves
+- *Comanda:* es el número de comanda al que se le va a efecturar el pago.
+- *Código:* es el código que hace referencia al cliente, puede ser un codigo QR generado por un dispositivo movil, puede ser una tarjeta con codigo de barra, etc. En síntesis es el codigo que conoce el servicio a desarrollar)
+- *Monto:* Es el importe a deducir sel servicio de prepago.
+
+
+## Manejo de Respuestas entre el servicio y Tango Restô
+El intercambio entre Restô y el servicio es a través de un JSON. Este se representa a través de la Clase RespuestaDto.cs.
+La misma tiene las siguientes propiedades
+- Estado: Propiedad booleana, si el pago se proceso correctamente se le asigna un true.
+- Transaccion: Propiedad para devolver a Restô un número de operación para que quede una referencia.
+- Monto: es el monto autorizado por el servicio del plugin implementado.
+- MensajeError: Es el mensaje de error a mostrar al usuario. Si el estado = false, se mostrará lo que contenga esta propiedad.
+
+```
+ public class RespuestaDto
+    {
+        public bool Estado { get; set; }
+        public string Transaccion { get; set; }
+        public string Monto { get; set; }
+        public string MensajeError { get; set; }
+    }
 ```
 
 ## ¿Cómo depurar el servicio?
