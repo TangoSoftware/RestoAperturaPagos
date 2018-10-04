@@ -48,13 +48,13 @@ La solución esta desarrollada en .Net Core, y funciona como aplicación de cons
     *Body ContentType:* application/Json
     *Editor view:* Raw input
     *Format Json*
-    ```
+```
 {
   "comanda": "55",
   "monto": "100",
   "codigo": "eQR01PIPOL31"
 }
-    ```
+```
    
     
   
