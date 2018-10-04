@@ -1,5 +1,5 @@
-# Resto Apertura Pagos
-Este proyecto es una solución de apertura, para poder realizar Pre Pagos (como Giftcard, Pipol y otros) y que se integre con el sistema Restô.
+# Restô Apertura Pagos
+Este proyecto permite extender la funcionalidad de Tango Restô incorporando nuevos medios de pago electrónico para que los clientes puedan utilizarlos. Además de medios de pago electrónicos puede incluir tarjetas de prepago o giftcards.
 
 ## Tipo de solución
 La solución esta desarrollada en .Net Core, y funciona como aplicación de consola o servicio de Windows.
@@ -10,10 +10,10 @@ La solución esta desarrollada en .Net Core, y funciona como aplicación de cons
 - Utiliza las librerias de Autofac y log4net.
 - Fácil de incorporar otras empresas de prepago.
 
-## ¿cómo ampliar funcionalidad?
-- Incorporar un nuevo controlador: Respetar el método *Pagar* con sus parámetros. Dado que es el punto de entrada y de entendimiento de Tango Resto con las cuentas de Tesorería.
+## ¿Cómo ampliar funcionalidad?
+- Incorporar un nuevo controlador: Respetar el método *Pagar* con sus parámetros. Dado que es el punto de entrada y de entendimiento de Tango Restô con las cuentas de Tesorería.
  
-- Appsettings.js: Seguramente van a necesitar credenciales de acceso para conectarse a un nuevo proveedor de pagos. Para eso los parámetros deberán incluirlo en este archivo.
+- Appsettings.js: Seguramente van a necesitar credenciales de acceso para conectarse a un nuevo proveedor de pagos. Por ese motivo, los parámetros deberán incluirlo en este archivo.
 
 - Crear la clase [MedioPagoNuevo]Config.cs: En funcion del punto anterior, tiene que crear una clase de configuracion donde se mapee sus  propiedades con lo que se definió en el archivo AppSettings.cs
 
