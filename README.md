@@ -51,10 +51,10 @@ La versión mínima requerida de Tango Restô para habiltar esta funcionalidad e
 
 ## Parámetros de entrada al método Pagar.
 Tango Restô, al invocar al servicio de apertura envia una lista valores en formato clave - valor.
-Por ahor el sistema envia 3 claves
+Por ahora el sistema envia 3 claves
 - *Comanda:* es el número de comanda al que se le va a efecturar el pago.
 - *Código:* es el código que hace referencia al cliente, puede ser un codigo QR generado por un dispositivo movil, puede ser una tarjeta con codigo de barra, etc. En síntesis es el codigo que conoce el servicio a desarrollar)
-- *Monto:* Es el importe a deducir sel servicio de prepago.
+- *Monto:* Es el importe a deducir del servicio de prepago.
 
 
 ## Manejo de Respuestas entre el servicio y Tango Restô
