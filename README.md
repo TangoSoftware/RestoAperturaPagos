@@ -18,7 +18,7 @@ Para ello, ingrese al ABM de cuentas e indique la URL del servicio que responder
 Durante la facturación de la comanda el adicionista podrá seleccionar un medio de pago, en caso de seleccionar el configurado en el punto anterior Restô solitará que ingrese la identificación del pago (esta identificación puede ser ingresada manualmente, mediante un lector de QR, de banda magnética, etc.) y luego invocará a la URL definida en la cuenta. En caso de recibir la aceptación de la transacción por parte del proveedor del servicio de pagos dará por cobrada la comanda y sólo restará que emita la factura.
 
 ### Versiones soportadas de Tango Restô
-La versión mínima requerida de Tango Restô para habiltar esta funcionalidad es la 18.01.000.#### o superior.
+La versión mínima requerida de Tango Restô para habiltar esta funcionalidad es la **18.01.000.1265 o superior**.
 
 ## ¿Cómo ampliar funcionalidad?
 - **Incorporar un nuevo controlador:** Respetar el método *Pagar* con sus parámetros. Dado que es el punto de entrada y de entendimiento de Tango Restô con las cuentas de Tesorería.
