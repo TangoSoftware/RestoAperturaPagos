@@ -32,8 +32,7 @@ La versión mínima requerida de Tango Restô para habiltar esta funcionalidad e
 ```
             #region Inyección nativa Aspnet core. Se agrega las secciones de appSettings.
             services.Configure<AmipassConfig>(Configuration.GetSection("Amipass"));
-            services.Configure<PipolConfig>(Configuration.GetSection("Pipol"));
-            services.Configure<[MedioPagoNuevo]Config>(Configuration.GetSection("MedioPagoNuevo"));
+            services.Configure<PipolConfig>(Configuration.GetSection("Pipol"));services.Configure<[MedioPagoNuevo]Config>(Configuration.GetSection("MedioPagoNuevo"));
             #endregion
 ```
 
@@ -93,6 +92,9 @@ La misma tiene las siguientes propiedades
 ```
    
     
+
+
+
   
   
   
