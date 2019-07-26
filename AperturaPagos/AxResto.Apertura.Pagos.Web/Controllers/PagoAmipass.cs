@@ -53,9 +53,18 @@ namespace AxResto.Apertura.Pagos.Web.Controllers
                 string monto = value["monto"];
                 _logger.Debug($"Comanda: {comanda}, código: {codigo}, monto {monto}");
 
+                string url;
+                if (_amipassConfig.Value.Enviroment.Equals("STAGING"))
+                {
+                    url = _amipassConfig.Value.Url_Test;
+                } else
+                {
+                    url = _amipassConfig.Value.Url_Prod;
+                }
                 string authorization = _amipassConfig.Value.Authorization;
                 string codigoLocal = _amipassConfig.Value.CodigoLocal;
-                var respuestaService = _service.Pagar(authorization, codigoLocal, codigo, monto);
+                _logger.Debug($"authorization: {authorization}, codigoLocal: {codigoLocal}, url: {url}");
+                var respuestaService = _service.Pagar(authorization, codigoLocal, codigo, monto, url);
                 RespuestaMapping.FromRespuestaAmipass(respuestaService, resp);
                 _logger.Debug("[FINISH] PagoAmipass.Pagar: {commanda}");               
             }

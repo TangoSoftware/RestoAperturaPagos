@@ -10,10 +10,18 @@ namespace AxResto.Pipol.Plugin
 {
     public class Pipol_Imp : IPipol
     {
-        public RespuestaDto Pagar(string commerceKey, string codigoQr, string monto, string comanda)
+        public RespuestaDto Pagar(string commerceKey, string codigoQr, string monto, string comanda, string url = "")
         {
-            string url = "http://api.mobile.mundopipol.com:8080/PipolRestoWeb/PipolrestoWebJson/RestoMethods/shellProducts"; 
-            HttpWebRequest request = (HttpWebRequest)HttpWebRequest.Create(new Uri(url));
+            string urlx;
+            if (url.Equals(""))
+            {
+                urlx = "http://api.mobile.mundopipol.com:8080/PipolRestoWeb/PipolrestoWebJson/RestoMethods/shellProducts";
+            } else
+            {
+                urlx = url;
+            }
+
+            HttpWebRequest request = (HttpWebRequest)HttpWebRequest.Create(new Uri(urlx));
             var values = new Dictionary<string, string>{
                 { "commerceKey", commerceKey },
                 { "tokenQR", codigoQr },

@@ -1,0 +1,56 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2016
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AxResto.Apertura.Pagos.Web", "AxResto.Apertura.Pagos.Web\AxResto.Apertura.Pagos.Web.csproj", "{0D4190F7-EE1D-4D97-8705-57C1A5AFF9E5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{4C012A02-0580-4EDB-BA65-FB8AA2988FF5}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AxResto.Amipass.Plugin", "AxResto.Amipass.Plugin\AxResto.Amipass.Plugin.csproj", "{B6408611-4089-4D4F-9635-1D099881710A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AxResto.Pipol.Plugin", "AxResto.Pipol.Plugin\AxResto.Pipol.Plugin.csproj", "{E3DC59B6-0C3F-4BFD-A86D-1F8D04960C8E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AxResto.Apertura.Pagos.Web.Service", "AxResto.Apertura.Pagos.Web.Service\AxResto.Apertura.Pagos.Web.Service.csproj", "{0815D66E-9AE6-4B91-ADDD-1DF7230F9378}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AxResto.Shared", "AxResto.Shared\AxResto.Shared.csproj", "{770A3D71-31C3-46AE-97AD-A0325D8462FB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0D4190F7-EE1D-4D97-8705-57C1A5AFF9E5}.Debug|x86.ActiveCfg = Debug|x86
+		{0D4190F7-EE1D-4D97-8705-57C1A5AFF9E5}.Debug|x86.Build.0 = Debug|x86
+		{0D4190F7-EE1D-4D97-8705-57C1A5AFF9E5}.Release|x86.ActiveCfg = Release|x86
+		{0D4190F7-EE1D-4D97-8705-57C1A5AFF9E5}.Release|x86.Build.0 = Release|x86
+		{B6408611-4089-4D4F-9635-1D099881710A}.Debug|x86.ActiveCfg = Debug|x86
+		{B6408611-4089-4D4F-9635-1D099881710A}.Debug|x86.Build.0 = Debug|x86
+		{B6408611-4089-4D4F-9635-1D099881710A}.Release|x86.ActiveCfg = Release|x86
+		{B6408611-4089-4D4F-9635-1D099881710A}.Release|x86.Build.0 = Release|x86
+		{E3DC59B6-0C3F-4BFD-A86D-1F8D04960C8E}.Debug|x86.ActiveCfg = Debug|x86
+		{E3DC59B6-0C3F-4BFD-A86D-1F8D04960C8E}.Debug|x86.Build.0 = Debug|x86
+		{E3DC59B6-0C3F-4BFD-A86D-1F8D04960C8E}.Release|x86.ActiveCfg = Release|x86
+		{E3DC59B6-0C3F-4BFD-A86D-1F8D04960C8E}.Release|x86.Build.0 = Release|x86
+		{0815D66E-9AE6-4B91-ADDD-1DF7230F9378}.Debug|x86.ActiveCfg = Debug|x86
+		{0815D66E-9AE6-4B91-ADDD-1DF7230F9378}.Debug|x86.Build.0 = Debug|x86
+		{0815D66E-9AE6-4B91-ADDD-1DF7230F9378}.Release|x86.ActiveCfg = Release|x86
+		{0815D66E-9AE6-4B91-ADDD-1DF7230F9378}.Release|x86.Build.0 = Release|x86
+		{770A3D71-31C3-46AE-97AD-A0325D8462FB}.Debug|x86.ActiveCfg = Debug|x86
+		{770A3D71-31C3-46AE-97AD-A0325D8462FB}.Debug|x86.Build.0 = Debug|x86
+		{770A3D71-31C3-46AE-97AD-A0325D8462FB}.Release|x86.ActiveCfg = Release|x86
+		{770A3D71-31C3-46AE-97AD-A0325D8462FB}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{B6408611-4089-4D4F-9635-1D099881710A} = {4C012A02-0580-4EDB-BA65-FB8AA2988FF5}
+		{E3DC59B6-0C3F-4BFD-A86D-1F8D04960C8E} = {4C012A02-0580-4EDB-BA65-FB8AA2988FF5}
+		{770A3D71-31C3-46AE-97AD-A0325D8462FB} = {4C012A02-0580-4EDB-BA65-FB8AA2988FF5}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6C3E66E9-C0DD-4C8A-A5EB-EF1E6F013305}
+	EndGlobalSection
+EndGlobal

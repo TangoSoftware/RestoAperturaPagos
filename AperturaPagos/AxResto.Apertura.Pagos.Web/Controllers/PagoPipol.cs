@@ -54,8 +54,17 @@ namespace AxResto.Apertura.Pagos.Web.Controllers
                 string monto = value["monto"];
                 _logger.Debug($"Comanda: {comanda}, código: {codigo}, monto {monto}");
 
+                string url;
+                if (_settings.Value.Enviroment.Equals("STAGING"))
+                {
+                    url = _settings.Value.Url_Test;
+                } else
+                {
+                    url = _settings.Value.Url_Prod;
+                }
                 string commerceKey = _settings.Value.CommerceKey;
-                var respuestaService = _service.Pagar(commerceKey, codigo, monto, comanda);
+                _logger.Debug($"commerceKey: {commerceKey}, url: {url}");
+                var respuestaService = _service.Pagar(commerceKey, codigo, monto, comanda, url);
                 RespuestaMapping.FromRespuestaPipol(respuestaService, resp);
                 _logger.Debug($"[FINISH] PagoPipol.Pagar: {comanda}");               
             }

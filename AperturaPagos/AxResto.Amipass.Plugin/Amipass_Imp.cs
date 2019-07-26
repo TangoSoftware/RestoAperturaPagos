@@ -8,12 +8,19 @@ namespace AxResto.Amipass.Plugin
 {
     public class Amipass_Imp : IAmipass
     {
-        public RespuestaDto Pagar(string tokenAutenticacion, string codigoLocal, string codigoQr, string monto)
+        public RespuestaDto Pagar(string tokenAutenticacion, string codigoLocal, string codigoQr, string monto, string url = "")
         {
             string codigoPromocion = "";
-            string parametros = $"?NumeroTransaccion={codigoQr}&Monto={monto}&CodLocal={codigoLocal}&CodPromocion={codigoPromocion}";
-            string url = "https://pay.amipass.com/wspayTest/PayPAP" + parametros;
-            HttpWebRequest request = (HttpWebRequest)HttpWebRequest.Create(new Uri(url));
+            string parametros = $"?NumeroTransaccion={codigoQr}&Monto={monto}&Codlocal={codigoLocal}&CodPromocion={codigoPromocion}";          
+            string urlx;
+            if (url.Equals(""))
+            {
+                urlx = "https://intpay.amipassqa.com/wspay/PAYPAP" + parametros;                
+            } else
+            {
+                urlx = url + parametros;
+            }
+            HttpWebRequest request = (HttpWebRequest)HttpWebRequest.Create(new Uri(urlx));
             request.ContentType = "application/json";
             request.Headers["Authorization"] = string.Format("Basic {0}", tokenAutenticacion);
             string respuesta = "";
@@ -29,10 +36,9 @@ namespace AxResto.Amipass.Plugin
                 }
                 RespuestaDto resp = JsonConvert.DeserializeObject<RespuestaDto>(respuesta);
                 return resp;
-            }
-            catch (Exception ex)
+            } catch (Exception ex)
             {
-                throw new Exception($"Exception Plugin Amipass [{ex.Message}]" );
+                throw new Exception($"Exception Plugin Amipass [{ex.Message}]");
             }
         }
     }
